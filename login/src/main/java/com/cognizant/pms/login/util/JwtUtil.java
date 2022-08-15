@@ -58,7 +58,7 @@ public class JwtUtil {
 		try {
 			String[] parts = header.split(" ");
 			if (parts.length != 2 || !"Bearer".equals(parts[0])) {
-				System.out.println("Incorrect Authentication Structure");
+				log.error("Incorrect Authentication Structure");
 				throw new LoginException("Incorrect Authentication Structure");
 			}
 			String username = extractUsername(parts[1]);
